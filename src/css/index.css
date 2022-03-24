@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;0,900;1,200;1,900&display=swap');
+
+:root {
+  --black: 42, 43, 46;
+  --gray: 66, 67, 74;
+  --light: 164, 194, 168;
+  --light-green: 172, 235, 152;
+  --green: 135, 255, 101;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(var(--black));
+}
+
+.glowText {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(var(--green), .4), 0 0 40px rgba(var(--green), .4);
+}
+.glowBox {
+  box-shadow:
+    0 0 10px 3px rgba(255, 255, 255, .1),  /* inner white */
+    0 0 20px 5px rgba(var(--green), .1), /* middle magenta */
+    0 0 20px 5px rgba(0, 255, 255, .1); /* outer cyan */
+}
+.glowBox:hover {
+  box-shadow:
+    0 0 20px 3px rgba(255, 255, 255, .3),  /* inner white */
+    0 0 40px 5px rgba(var(--green), .3), /* middle magenta */
+    0 0 40px 5px rgba(0, 255, 255, .3); /* outer cyan */
+}
