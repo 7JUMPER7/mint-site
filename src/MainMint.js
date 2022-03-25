@@ -2,14 +2,14 @@ import { useState } from "react";
 import { ethers, BigNumber } from "ethers";
 import randomPicsNFT from './RandomPicsNFT.json';
 import './css/MainMint.css';
-
-import Image from "./NFTs/nft1.png";
+import NFTCarousel from "./NFTCarousel";
 
 const randomPicsNFTAddress = '0x33a776EC8ff22941852A86a4EdEeECf6c5781A62';
 
 const MainMint = ({accounts, setAccounts}) => {
     const [mintAmount, setMintAmount] = useState(1);
     const isConnected = Boolean(accounts[0]);
+
 
     const handleMint = async () => {
         if(window.ethereum) {
@@ -32,36 +32,19 @@ const MainMint = ({accounts, setAccounts}) => {
 
     return(
         <div>
-            <div className="NFTContainer">
-                <div className="NFTCard glowBox">
-                    <img src={Image} alt="nft1.png"></img>
+            <div className="top">
+                <NFTCarousel></NFTCarousel>
+                <div className="mainPlate">
+                    <h1>Ranodom Pics NFT</h1>
+                    <p>Try to buy!</p>
                 </div>
             </div>
-            <div className="NFTContainer">
-                <div className="NFTCard glowBox">
-                    <img src={Image} alt="nft1.png"></img>
-                </div>
-            </div>
-            <div className="NFTContainer">
-                <div className="NFTCard glowBox">
-                    <img src={Image} alt="nft1.png"></img>
-                </div>
-            </div>
-            <div className="NFTContainer">
-                <div className="NFTCard glowBox">
-                    <img src={Image} alt="nft1.png"></img>
-                </div>
-            </div>
-            <div className="NFTContainer">
-                <div className="NFTCard glowBox">
-                    <img src={Image} alt="nft1.png"></img>
-                </div>
-            </div>
-            <div className="NFTContainer">
-                <div className="NFTCard glowBox">
-                    <img src={Image} alt="nft1.png"></img>
-                </div>
-            </div>
+            <h1>TEST</h1>
+            <h1>TEST</h1>
+            <h1>TEST</h1>
+            <h1>TEST</h1>
+            <h1>TEST</h1>
+            <h1>TEST</h1>
         </div>
     )
 }

@@ -1,4 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;0,900;1,200;1,900&display=swap');
+@font-face {
+  font-family: 'Euclid Circular';
+  font-weight: 400;
+  src: url('../fonts/Euclid\ Circular\ A\ Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Euclid Circular';
+  font-weight: 900;
+  src: url('../fonts/Euclid\ Circular\ A\ Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Euclid Circular';
+  font-weight: 900;
+  font-style: italic;
+  src: url('../fonts/Euclid\ Circular\ A\ Bold\ Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Euclid Circular';
+  font-weight: 200;
+  src: url('../fonts/Euclid\ Circular\ A\ Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Euclid Circular';
+  font-weight: 200;
+  font-style: italic;
+  src: url('../fonts/Euclid\ Circular\ A\ Light\ Italic.ttf') format('truetype');
+}
 
 :root {
   --black: 42, 43, 46;
@@ -11,8 +37,9 @@
 body {
   height: 100vh;
   margin: 0;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 900;
+  width: 100vw;
+  font-family: 'Euclid Circular', sans-serif;
+  font-weight: bold;
   font-style: italic;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
