@@ -1,5 +1,6 @@
 header {
-    background-color: rgba(var(--green), .1);
+    /* background-color: rgba(var(--green), .1); */
+    background-color: rgba(17, 17, 17, .7);
     backdrop-filter: blur(10px) saturate(1.5);
     color: rgb(var(--green));
     

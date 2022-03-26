@@ -1,9 +1,103 @@
-.top {
+.part {
+    height: 100vh;
+}
+
+
+.part1 {
     height: calc(100vh - 60px);
 }
 
-.mainPlate {
+.part1 .mainPlate {
     position: absolute;
-    top: 50%;
-    right: 30px;
+    top: -60px;
+    right: 0;
+    padding: 30px;
+    background-color: rgb(17, 17, 17);
+    color: rgb(var(--green));
+
+    height: calc(100% + 60px);
+    width: 50vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.part1 .mainPlate h1 {
+    font-style: normal;
+    font-size: 70px;
+}
+
+
+.part2 {
+    background-color: rgb(var(--green));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.part2 h1 {
+    color: rgb(var(--green));
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.part2 .mintBGContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.part2 .mintBGContainer .mintBG {
+    transform: rotateZ(-45deg) translateY(-);
+    overflow: hidden;
+    width: 120vw;
+}
+.part2 .mintBG div {
+    font-size: 60px;
+    font-weight: bold;
+    font-style: normal;
+    text-shadow: -1px -1px 0 rgb(17, 17, 17), 1px -1px 0 rgb(17, 17, 17), -1px 1px 0 rgb(17, 17, 17), 1px 1px 0 rgb(17, 17, 17);
+    color: rgb(var(--green));
+    margin-top: 20px;
+}
+.part2 .mintBG div span {
+    margin-right: 40px;
+}
+
+.part2 .mintBG div.leftStrip {
+    animation: leftAnim 30s infinite linear;
+}
+.part2 .mintBG div.rightStrip {
+    animation: rightAnim 30s infinite linear;
+}
+
+@keyframes leftAnim {
+    from {
+        transform: translateX(180px);
+    } to {
+        transform: translateX(-300px);
+    }
+}
+@keyframes rightAnim {
+    from {
+        transform: translateX(-300px);
+    } to {
+        transform: translateX(300px);
+    }
+}
+
+.part2 .mintWindow {
+    background-color: rgb(var(--black));
+    width: 50%;
+    border-radius: 10px;
+    color: white;
+    padding: 30px;
+    max-width: 700px;
+    z-index: 1;
 }

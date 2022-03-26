@@ -21,7 +21,7 @@ const NavBar = ({accounts, setAccounts}) => {
                     (isConnected) ?
                     <div>Connected</div>
                     :
-                    <button className="glowBox">Connect</button>
+                    <button className="glowBox">Connect wallet</button>
                 }
             </div>
         </header>

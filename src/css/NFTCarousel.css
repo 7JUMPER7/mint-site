@@ -1,18 +1,17 @@
 .NFTCarousel {
-    /* border: 1px solid red; */
     margin-top: 50px;
     padding: 40px;
     
     overflow: hidden;
-    width: 110vw;
+    width: 120vw;
+    height: 480px;
     justify-content: space-evenly;
-
-    /* max-width: 120vw; */
 
     transform: rotate3d(-.1, -1, -0.1, 50deg);
     position: absolute;
     top: 150px;
     left: -25vw;
+    z-index: 0;
 }
 
 .NFTCarousel .blurMask {
@@ -21,11 +20,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-
-    /* background-color: white; */
-    mask: linear-gradient(to left, black, rgba(0, 0, 0, 0.7), transparent, transparent, rgba(0, 0, 0, 0.7));
-	backdrop-filter: blur(10px);
-    z-index: 5;
 }
 
 .NFTCarousel .NFTContainer {
