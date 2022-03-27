@@ -1,3 +1,6 @@
+.NFTWrap {
+    transform: translateY(500px);
+}
 .NFTCarousel {
     margin-top: 50px;
     padding: 40px;
@@ -7,11 +10,14 @@
     height: 480px;
     justify-content: space-evenly;
 
-    transform: rotate3d(-.1, -1, -0.1, 50deg);
+    transform: rotate3d(-.1, -1, -0.1, 50deg) translate3d(-500px, -500px, -500px);
     position: absolute;
     top: 150px;
-    left: -25vw;
-    z-index: 0;
+    left: -30vw;
+    z-index: 1;
+
+    position: absolute;
+    z-index: 1;
 }
 
 .NFTCarousel .blurMask {

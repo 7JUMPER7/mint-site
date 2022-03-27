@@ -21,20 +21,21 @@ const NFTCarousel = () => {
     }, [images]);
 
     return(
-        <div className="NFTCarousel">
-            <div className="blurMask"></div>
-            <div className="NFTContainer">
-                {
-                    images.map((image, index) => {
-                        let leftOffset = (index * 400) + (index * 150) + 150;
-                        let blurAmount = 5;
-                        let blurOffset = index * 4 - 4;
-
-                        return(
-                            <NFTCard image={image} key={index} blurAmount={blurAmount} blurOffset={blurOffset} leftOffset={leftOffset}></NFTCard>
-                        )
-                    })
-                }
+        <div className="NFTWrap">
+            <div className="NFTCarousel">
+                <div className="blurMask"></div>
+                <div className="NFTContainer">
+                    {
+                        images.map((image, index) => {
+                            let leftOffset = (index * 400) + (index * 150) + 150;
+                            let blurAmount = 5;
+                            let blurOffset = index * 4 - 4;
+                            return(
+                                <NFTCard image={image} key={index} blurAmount={blurAmount} blurOffset={blurOffset} leftOffset={leftOffset}></NFTCard>
+                            )
+                        })
+                    }
+                </div>
             </div>
         </div>
     )

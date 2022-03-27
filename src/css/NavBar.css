@@ -1,8 +1,9 @@
 header {
-    /* background-color: rgba(var(--green), .1); */
-    background-color: rgba(17, 17, 17, .7);
-    backdrop-filter: blur(10px) saturate(1.5);
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px) saturate(1.2);
     color: rgb(var(--green));
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
     
     height: 60px;
     position: sticky;
@@ -34,4 +35,10 @@ header button:hover {
     background-color: rgb(var(--green));
     color: rgb(var(--black));
     cursor: pointer;
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    header {
+        background-color: rgba(17, 17, 17, .9);
+    }
 }

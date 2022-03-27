@@ -59,13 +59,13 @@ body {
 }
 .glowBox {
   box-shadow:
-    0 0 10px 3px rgba(255, 255, 255, .1),  /* inner white */
-    0 0 20px 5px rgba(var(--green), .1), /* middle magenta */
-    0 0 20px 5px rgba(0, 255, 255, .1); /* outer cyan */
+    0 0 10px 3px rgba(255, 255, 255, .1),
+    0 0 20px 5px rgba(var(--green), .1),
+    0 0 20px 5px rgba(0, 255, 255, .1);
 }
 .glowBox:hover {
   box-shadow:
-    0 0 20px 3px rgba(255, 255, 255, .3),  /* inner white */
-    0 0 40px 5px rgba(var(--green), .3), /* middle magenta */
-    0 0 40px 5px rgba(0, 255, 255, .3); /* outer cyan */
+    0 0 20px 3px rgba(255, 255, 255, .3),
+    0 0 40px 5px rgba(var(--green), .3),
+    0 0 40px 5px rgba(0, 255, 255, .3);
 }

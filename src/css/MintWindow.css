@@ -1,0 +1,79 @@
+.mintWindow {
+    background-color: rgb(var(--black));
+    width: 80vw; 
+    color: white;
+    padding: 30px;
+    max-width: 700px;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 10px;
+
+    box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, .5);
+}
+.mintWindow h1 {
+    color: white;
+    border: none;
+    box-shadow: none;
+    text-shadow: 3px 3px 30px black;
+    z-index: 5;
+}
+
+@supports (backdrop-filter: none) {
+    .mintWindow {
+        backdrop-filter: blur(5px) saturate(1.2);
+        background-color: rgba(var(--black), .5);
+    }
+}
+
+.mintWindow form {
+    padding: 30px;
+}
+.mintWindow .amountContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.mintWindow button {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+
+    border-radius: 7px;
+    border: 3px solid rgb(var(--green));
+    color: rgb(var(--green));
+    background-color: transparent;
+    box-shadow: 3px 3px 30px rgba(0, 0, 0, .2);
+
+    font-weight: bold;
+    text-align: center;
+
+    transition: .2s all;
+}
+.mintWindow button:hover {
+    color: rgb(var(--black));
+    background-color: rgb(var(--green));
+    cursor: pointer;
+}
+.mintWindow button.submit {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 200;
+    font-style: italic;
+}
+
+
+.mintWindow .amountContainer input[type='number'] {
+    background-color: transparent;
+    border: 3px solid rgb(var(--green));
+    border-radius: 7px;
+    outline: none;
+}
