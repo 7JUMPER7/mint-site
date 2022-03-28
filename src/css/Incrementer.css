@@ -4,19 +4,26 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    transition: .3s all;
 }
 
-.incrementerContainer .number {
-    /* height: 100%; */
+.incrementerContainer .numbers {
+    width: 100px;
+}
+.incrementerContainer .numbers .number {
+    position: absolute;
+    left: 0;
+    /* top: 0; */
 }
 
 .incrementerContainer .buttons {
-    height: 100%;
-    margin: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: .3s all;
+    position: absolute;
+    right: 0;
 }
 .incrementerContainer .buttons .button svg {
     transition: .2s all;

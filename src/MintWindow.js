@@ -37,10 +37,17 @@ const MintWindow = () => {
             <Incrementer 
                 value={mintAmount} 
                 setValue={setMintAmount} 
+                minValue={1}
+                maxValue={10}
                 fontSize={70} 
+                fontColor={'white'}
                 buttonsSize={24} 
                 buttonsColor={'white'}
                 buttonsHoverColor={'#87FF65'}
+                buttonsOffset={15}
+                buttonsMargin={-10}
+                animationTime={300}
+                componentMargin={20}
             ></Incrementer>
         </div>
     );
