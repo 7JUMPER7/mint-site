@@ -49,6 +49,7 @@ const MintWindow = () => {
                 animationTime={300}
                 componentMargin={20}
             ></Incrementer>
+            <button className="glowBox">Mint</button>
         </div>
     );
 }

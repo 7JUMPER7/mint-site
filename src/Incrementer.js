@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './css/Incrementer.css';
 
 const Incrementer = (
@@ -23,11 +23,12 @@ const Incrementer = (
     const [componentWidth, setComponentWidth] = useState(fontSize);
     const [componentHeight, setComponentHeight] = useState(fontSize);
     const [numberHeight, setNumberHeight] = useState(fontSize);
+    const component = useRef();
 
     useEffect(() => {
-        setComponentWidth(document.querySelector('.number').offsetWidth + buttonsSize + buttonsOffset);
-        let textElementSize = document.querySelector('.number').offsetHeight;
-        let buttonsElementSize = document.querySelector('.buttons').offsetHeight;
+        setComponentWidth(component.current.querySelector('.number').offsetWidth + buttonsSize + buttonsOffset);
+        let textElementSize = component.current.querySelector('.number').offsetHeight;
+        let buttonsElementSize = component.current.querySelector('.buttons').offsetHeight;
         setComponentHeight((textElementSize > buttonsElementSize) ? textElementSize : buttonsElementSize);
         setNumberHeight(textElementSize);
     }, [buttonsSize, buttonsOffset])
@@ -45,8 +46,8 @@ const Incrementer = (
     }
 
     const increaseValue = () => {
-        let numbers = document.querySelector('.numbers');
-        let lastNumbers = document.querySelectorAll('.number');
+        let numbers = component.current.querySelector('.numbers');
+        let lastNumbers = component.current.querySelectorAll('.number');
         let lastNumber = lastNumbers[lastNumbers.length - 1];
         let newNumber = document.createElement('div');
         newNumber.className = 'number';
@@ -68,8 +69,8 @@ const Incrementer = (
         setValue(value + 1);
     }
     const decreaseValue = () => {
-        let numbers = document.querySelector('.numbers');
-        let lastNumbers = document.querySelectorAll('.number');
+        let numbers = component.current.querySelector('.numbers');
+        let lastNumbers = component.current.querySelectorAll('.number');
         let lastNumber = lastNumbers[lastNumbers.length - 1];
         let newNumber = document.createElement('div');
         newNumber.className = 'number';
@@ -92,7 +93,7 @@ const Incrementer = (
     }
 
     return(
-        <div className="incrementerContainer" style={{height: componentHeight, width: componentWidth, margin: componentMargin}}>
+        <div className="incrementerContainer" ref={component} style={{height: componentHeight, width: componentWidth, margin: componentMargin}}>
             <div className="numbers" style={{height: numberHeight}}>
                 <div className="number" style={{fontSize: fontSize, color: fontColor, transition: `${animationTime}ms all`}}>{value}</div>
             </div>

@@ -1,4 +1,12 @@
 .NFTWrap {
+    flex: 1 1 auto;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 15vh;
+}
+.NFTMover {
+    width: 50vw;
+    height: 100%;
     transform: translateY(500px);
 }
 .NFTCarousel {
@@ -39,5 +47,16 @@
         transform: translateX(0px);
     } to {
         transform: translateX(-2204px);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .NFTCarousel {
+        top: 0;
+        left: -40vw;
+        width: 200vw;
+    }
+    .NFTMover {
+        width: 100vw;
     }
 }
