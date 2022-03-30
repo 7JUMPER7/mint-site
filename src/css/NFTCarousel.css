@@ -1,39 +1,33 @@
 .NFTWrap {
     flex: 1 1 auto;
-    height: 100vh;
+    height: calc(100vh - 60px);
     overflow: hidden;
-    margin-top: 15vh;
+    width: 50vw;
+    max-width: 800px;
+    position: relative;
 }
 .NFTMover {
-    width: 50vw;
+    width: 100%;
     height: 100%;
-    transform: translateY(500px);
+    position: absolute;
+    transform: translateY(50vh);
 }
 .NFTCarousel {
     margin-top: 50px;
     padding: 40px;
     
     overflow: hidden;
-    width: 120vw;
+    width: 1600px;
     height: 480px;
     justify-content: space-evenly;
 
     transform: rotate3d(-.1, -1, -0.1, 50deg) translate3d(-500px, -500px, -500px);
     position: absolute;
     top: 150px;
-    left: -30vw;
-    z-index: 1;
+    left: min(-400px, calc(50vw - 1000px));
 
     position: absolute;
     z-index: 1;
-}
-
-.NFTCarousel .blurMask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 .NFTCarousel .NFTContainer {
@@ -51,12 +45,21 @@
 }
 
 @media screen and (max-width: 700px) {
+    .NFTWrap {
+        width: 100vw;
+    }
     .NFTCarousel {
         top: 0;
-        left: -40vw;
-        width: 200vw;
+        left: calc(100vw - 1000px);
     }
     .NFTMover {
         width: 100vw;
+        transform: translateY(70vh);
+        margin-top: calc(100px - 7vh);
+    }
+}
+@media screen and (max-width: 400px) {
+    .NFTCarousel {
+        left: calc(100vw - 900px);
     }
 }

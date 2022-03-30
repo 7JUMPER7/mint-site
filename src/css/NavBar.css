@@ -14,11 +14,10 @@ header {
     padding: 0 50px;
     
     z-index: 100;
-    
 }
 
 header .logo {
-    font-size: 27px;
+    font-size: min(27px, 5vw);
 }
 
 header button {
@@ -40,5 +39,11 @@ header button:hover {
 @supports not (backdrop-filter: blur(10px)) {
     header {
         background-color: rgba(17, 17, 17, .9);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header {
+        padding: 0 20px;
     }
 }

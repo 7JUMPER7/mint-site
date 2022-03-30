@@ -24,7 +24,6 @@ const NFTCarousel = () => {
         <div className="NFTWrap">
             <div className="NFTMover">
                 <div className="NFTCarousel">
-                    <div className="blurMask"></div>
                     <div className="NFTContainer">
                         {
                             images.map((image, index) => {
