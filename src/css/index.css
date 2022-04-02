@@ -46,6 +46,7 @@ body {
   height: 100vh;
   margin: 0;
   width: 100vw;
+  min-width: 300px;
   font-family: 'Euclid Circular', sans-serif;
   font-weight: bold;
   font-style: italic;

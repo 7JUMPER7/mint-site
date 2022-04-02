@@ -44,11 +44,6 @@
     position: relative;
 }
 
-.part2 h1 {
-    color: rgb(var(--green));
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
 .part2 .mintBGContainer {
     position: absolute;
     top: 0;

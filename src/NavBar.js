@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import './css/NavBar.css';
+import UserContext from "./UserContext";
 
-const NavBar = ({accounts, setAccounts}) => {
+const NavBar = () => {
+    const {accounts, setAccounts} = useContext(UserContext);
     const isConnected = Boolean(accounts[0]);
 
     const connectAccount = async () => {
@@ -10,7 +12,19 @@ const NavBar = ({accounts, setAccounts}) => {
                 method: 'eth_requestAccounts'
             });
             setAccounts(accounts);
+
+            window.ethereum.on('accountsChanged', (accs) => {
+                setAccounts(accs);
+            })
+        } else {
+            console.log('Provider not found.');
         }
+    }
+
+    const getShortenAddress = (address) => {
+        let first = address.slice(0, 5);
+        let second = address.slice(-4);
+        return first + '...' + second;
     }
     
     return(
@@ -19,9 +33,9 @@ const NavBar = ({accounts, setAccounts}) => {
             <div>
                 {
                     (isConnected) ?
-                    <div>Connected</div>
+                    <div>{getShortenAddress(accounts[0])}</div>
                     :
-                    <button className="glowBox">Connect wallet</button>
+                    <button className="glowBox" onClick={() => connectAccount()}>Connect wallet</button>
                 }
             </div>
         </header>

@@ -1,16 +1,24 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./css/MintWindow.css";
 import { ethers, BigNumber } from "ethers";
 import randomPicsNFT from './RandomPicsNFT.json';
 import UserContext from "./UserContext";
 import Incrementer from "./Incrementer";
+import DefaultIncrementer from "./DefaultIncrementer";
 
 const randomPicsNFTAddress = '0x33a776EC8ff22941852A86a4EdEeECf6c5781A62';
 
 const MintWindow = () => {
+    const PRICE = 0.01;
     const {accounts, setAccounts} = useContext(UserContext);
     const [mintAmount, setMintAmount] = useState(1);
+    const [ethAmount, setEthAmount] = useState(mintAmount * PRICE);
     const isConnected = Boolean(accounts[0]);
+
+    useEffect(() => {
+        let amount = parseFloat((mintAmount * PRICE).toFixed(5));
+        setEthAmount(amount);
+    }, [mintAmount]);
 
     const handleMint = async () => {
         if(window.ethereum) {
@@ -23,7 +31,9 @@ const MintWindow = () => {
             );
 
             try {
-                const response = await contract.mint(mintAmount);
+                const response = await contract.mint(BigNumber.from(mintAmount), {
+                    value: ethers.utils.parseEther(ethAmount.toString())
+                });
                 console.log(response);
             } catch(e) {
                 console.log(e);
@@ -33,7 +43,11 @@ const MintWindow = () => {
 
     return(
         <div className="mintWindow">
-            <h1>Mint for 0.01 ETH</h1>
+            <h1>
+                <span>Mint for </span>
+                <DefaultIncrementer value={ethAmount} fontColor={'#c9ffba'}></DefaultIncrementer>
+                <span> ETH</span>
+            </h1>
             <Incrementer 
                 value={mintAmount} 
                 setValue={setMintAmount} 
@@ -49,7 +63,12 @@ const MintWindow = () => {
                 animationTime={300}
                 componentMargin={20}
             ></Incrementer>
-            <button className="glowBox">Mint</button>
+            {
+                isConnected ?
+                <button className="glowBox" onClick={() => handleMint()}>Mint Now</button>
+                :
+                <h3>Connect wallet first</h3>
+            }
         </div>
     );
 }
