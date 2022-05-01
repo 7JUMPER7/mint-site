@@ -25,8 +25,15 @@ module.exports = {
       url: process.env.REACT_APP_RINKEBY_RPC_URL,
       accounts: [process.env.REACT_APP_PRIVATE_KEY]
     },
+    testnet: {
+      url: "https://data-seed-prebsc-1-s1.binance.org:8545",
+      chainId: 97,
+      gasPrice: 20000000000,
+      accounts: [process.env.REACT_APP_PRIVATE_KEY]
+    }
   },
   etherscan: {
     apiKey: process.env.REACT_APP_ETHERSCAN_KEY,
+    // apiKey: process.env.REACT_APP_BSCSCAN_KEY,
   },
 };

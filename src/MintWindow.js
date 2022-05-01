@@ -7,6 +7,7 @@ import Incrementer from "./Incrementer";
 import DefaultIncrementer from "./DefaultIncrementer";
 
 const randomPicsNFTAddress = '0x33a776EC8ff22941852A86a4EdEeECf6c5781A62';
+// const randomPicsNFTAddress = '0xB3477dE1b5f5185BaB09105D869dBCCab5480a5C';
 
 const MintWindow = () => {
     const PRICE = 0.01;
@@ -23,6 +24,10 @@ const MintWindow = () => {
     const handleMint = async () => {
         if(window.ethereum) {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
+            // if((await provider.getNetwork()).chainId !== 97) {
+            //     alert('Change network to Binance Testnet');
+            //     return;
+            // }
             const signer = provider.getSigner();
             const contract = new ethers.Contract(
                 randomPicsNFTAddress,
